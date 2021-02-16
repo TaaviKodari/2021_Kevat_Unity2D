@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
-    public float moveSpeed = 2; 
-    Rigidbody2D rb2D;
-    
     // Start is called before the first frame update
     void Start()
     {
-
         
     }
 
