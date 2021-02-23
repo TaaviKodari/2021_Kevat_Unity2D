@@ -556,7 +556,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1369107877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,6 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  rb2D: {fileID: 1369107876}
 --- !u!1 &1659684809
 GameObject:
   m_ObjectHideFlags: 0
