@@ -19,8 +19,10 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMovement = Input.GetAxis("Horizontal");
     }
+
     private void FixedUpdate(){
         Vector2 playerVelocity = new Vector2(horizontalMovement * moveSpeed, rb2D.velocity.y);
         rb2D.velocity = playerVelocity;
     }
+    
 }
