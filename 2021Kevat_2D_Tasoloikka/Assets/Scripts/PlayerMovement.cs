@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 2; 
+    public float moveSpeed = 2;
+    public float jumpForce = 5f; 
     public  Rigidbody2D rb2D;
     private float horizontalMovement;
 
@@ -24,6 +25,11 @@ public class PlayerMovement : MonoBehaviour
 
         if(flipX != 0 && canMove == true){
             FlipPlayer(flipX);
+        }
+
+        if(Input.GetButtonDown("Jump")){
+            Vector2 jumpVelocity = new Vector2(0f,jumpForce);
+            rb2D.velocity += jumpVelocity;
         }
     }
 
