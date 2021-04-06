@@ -695,7 +695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.65, y: 1.63, z: -10}
+  m_LocalPosition: {x: -3.6500003, y: 1.63, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 77490627}
@@ -762,7 +762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855195088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.65, y: 1.63, z: -10}
+  m_LocalPosition: {x: -3.6500003, y: 1.63, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1480794376}
@@ -912,6 +912,7 @@ GameObject:
   - component: {fileID: 1369107876}
   - component: {fileID: 1369107875}
   - component: {fileID: 1369107877}
+  - component: {fileID: 1369107878}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -997,8 +998,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03651002, y: -0.34447324}
-  m_Size: {x: 0.716104, y: 1.3528073}
+  m_Offset: {x: 0.03651002, y: -0.2952652}
+  m_Size: {x: 0.716104, y: 1.2543912}
   m_Direction: 0
 --- !u!50 &1369107876
 Rigidbody2D:
@@ -1038,6 +1039,23 @@ MonoBehaviour:
   rb2D: {fileID: 1369107876}
   facing: 1
   canMove: 1
+  myFeet: {fileID: 1369107878}
+--- !u!58 &1369107878
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369107872}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.047062993, y: -0.76293015}
+  serializedVersion: 2
+  m_Radius: 0.24736595
 --- !u!1 &1480794375
 GameObject:
   m_ObjectHideFlags: 3
@@ -1767,7 +1785,7 @@ GameObject:
   - component: {fileID: 2067796221}
   - component: {fileID: 2067796220}
   - component: {fileID: 2067796219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
