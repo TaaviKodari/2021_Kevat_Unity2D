@@ -6,17 +6,19 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 2;
     public float jumpForce = 5f; 
+    public float climbSpeed = 2;
     public  Rigidbody2D rb2D;
     private float horizontalMovement;
 
     public int facing = 1;
     public bool canMove = true;
     public CircleCollider2D myFeet;
-
+    private float  gravityScaler;
     // Start is called before the first frame update
     void Start()
     {
-        //rb2D = GetComponent<Rigidbody2D>();  
+        //rb2D = GetComponent<Rigidbody2D>();
+        gravityScaler =  rb2D.gravityScale;
     }
 
     // Update is called once per frame
@@ -34,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
             rb2D.velocity += jumpVelocity;
             //rb2D.AddForce(jumpVelocity);
         }
+
+        ClimbLadder();
     }
 
     private void FixedUpdate(){
@@ -49,4 +53,18 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = new Vector2(x,transform.localScale.y);
         facing = (int)x;
     }
+
+    public void ClimbLadder()
+    {
+        if(!myFeet.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+        {
+            rb2D.gravityScale = gravityScaler;
+            return;
+        }
+        float verticalMovement = Input.GetAxis("Vertical");
+        Vector2 climbVelocity = new Vector2(0,verticalMovement * climbSpeed);
+        rb2D.gravityScale = 0;
+        rb2D.velocity = climbVelocity;
+    }
+
 }
