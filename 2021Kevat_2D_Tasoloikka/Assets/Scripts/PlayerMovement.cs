@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         float verticalMovement = Input.GetAxis("Vertical");
-        Vector2 climbVelocity = new Vector2(0,verticalMovement * climbSpeed);
+        Vector2 climbVelocity = new Vector2(0 , verticalMovement * climbSpeed);
         rb2D.gravityScale = 0;
         rb2D.velocity = climbVelocity;
     }
