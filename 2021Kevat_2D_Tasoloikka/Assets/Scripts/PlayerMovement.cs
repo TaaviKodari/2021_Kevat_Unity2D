@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove = true;
     public CircleCollider2D myFeet;
     private float  gravityScaler;
+
+    private bool isAlive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(isAlive == false)
+        {
+            return;
+        }
+
         horizontalMovement = Input.GetAxis("Horizontal");
         float flipX = Input.GetAxisRaw("Horizontal");
 
@@ -41,6 +49,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate(){
+
+        if(!isAlive)
+        {
+            return;
+        }
+
         Walk();
     }
     
@@ -67,4 +81,21 @@ public class PlayerMovement : MonoBehaviour
         rb2D.velocity = climbVelocity;
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.GetComponent<EnemyMovement>())
+        {
+            if(isAlive)
+            {
+                Die();
+            }
+            
+        }
+    }
+
+    public void Die()
+    {
+        isAlive = false;
+        rb2D.velocity = Vector3.zero;
+    }
 }
